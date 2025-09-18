@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* Fonts */
+    --font-main: 'Inter', sans-serif;
+
+    /* Colors */
+    --color-light-bg: #efefef;
+    --color-dark-bg: #242423;
+    --color-light-navbar: #ffffff;
+    --color-dark-navbar: #1c1c1c;
+    --color-light-text: #333333;
+    --color-dark-text: #efefef;
+    --color-primary: #ff9800;
+    --color-accent: #01275e;
+    --color-accent-dark: #0143a3;
+    --color-gray-dark: #2f2f2f;
+    --color-gray-light: #3a3a3a;
+}
+
+@layer base {
+    body {
+        @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text font-main;
+    }
+
+    button,
+    a {
+        @apply cursor-pointer;
+    }
+}
+
+@utility flex-between {
+    @apply flex justify-between items-center;
+}
+
+@utility section-container {
+    @apply px-4 md:px-7
+}
+
+@utility border-color {
+    @apply border-gray-200 dark:border-gray-light;
+}
+
+@utility panel {
+    @apply bg-white dark:bg-gray-dark p-4 border border-color rounded-md drop-shadow-sm
+}
+
+@utility transition-slide {
+    @apply transition-all duration-300
+}
+
+@layer components {
+    .logo {
+        @apply font-extrabold text-black dark:text-white text-xl md:text-2xl;
+    }
+
+    .sidebar {
+        @apply fixed top-0 left-0 w-56 h-dvh py-6 px-5 bg-light-navbar dark:bg-dark-navbar transition-slide z-50;
+    }
+
+    .userMenu {
+        @apply absolute right-0 w-48 overflow-hidden mt-2 bg-white dark:bg-dark-navbar border border-color rounded-md shadow-lg z-50;
+
+        li {
+            @apply cursor-pointer flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition;
+        }
+    }
+
+    .card {
+        @apply flex flex-col gap-5 panel;
+    }
+
+    .data-table {
+        @apply panel overflow-x-auto my-6;
+
+        table {
+            @apply table table-auto w-full;
+        }
+
+        tr {
+            @apply not-last:border-b border-color
+        }
+
+        th, td {
+            @apply px-4 py-2 text-left
+        }
+    }
+
+    .recharts-legend-wrapper {
+        @apply !bottom-0
+    }
+
+}
+
+/* Loader animation sourced from https://css-loaders.com/ */
+.loader {
+    width: 40px;
+    height: 30px;
+    --c: no-repeat linear-gradient(#ff9800 0 0);
+    background:
+        var(--c) 0 100%/8px 30px,
+        var(--c) 50% 100%/8px 20px,
+        var(--c) 100% 100%/8px 10px;
+    position: relative;
+    clip-path: inset(-100% 0);
+}
+
+.loader:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0143a3;
+    left: -16px;
+    top: 0;
+    animation:
+        l5-1 2s linear infinite,
+        l5-2 0.5s cubic-bezier(0, 200, .8, 200) infinite;
+}
+
+@keyframes l5-1 {
+    0% {
+        left: -16px;
+        transform: translateY(-8px)
+    }
+
+    100% {
+        left: calc(100% + 8px);
+        transform: translateY(22px)
+    }
+}
+
+@keyframes l5-2 {
+    100% {
+        top: -0.1px
+    }
+}

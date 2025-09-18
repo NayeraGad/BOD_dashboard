@@ -1,0 +1,9 @@
+export { default as Dashboard } from "./Dashboard";
+export { default as PostsPage } from "./posts/PostsPage";
+export { default as EditPostPage } from "./posts/EditPostPage";
+export { default as TodosPage } from "./todos/TodosPage";
+export { default as EditTodoPage } from "./todos/EditTodoPage";
+export { default as UsersPage } from "./users/UsersPage";
+export { default as EditUserPage } from "./users/EditUserPage";
+export { default as NotFoundPage } from "./NotFoundPage";
+export { default as LoginPage } from "./LoginPage";

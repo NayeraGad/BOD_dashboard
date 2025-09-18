@@ -82,6 +82,27 @@ npm run dev
 
 ---
 
+## 🌐 API Endpoints Used
+
+This project uses the [JSONPlaceholder](https://jsonplaceholder.typicode.com/) fake REST API for demonstration purposes:
+
+- `GET /users` — Fetch all users
+- `GET /posts` — Fetch all posts
+- `GET /todos` — Fetch all todos
+- `POST /users` — Create a new user
+- `POST /posts` — Create a new post
+- `POST /todos` — Create a new todo
+- `PUT /users/:id` — Update a user
+- `PUT /posts/:id` — Update a post
+- `PUT /todos/:id` — Update a todo
+- `DELETE /users/:id` — Delete a user
+- `DELETE /posts/:id` — Delete a post
+- `DELETE /todos/:id` — Delete a todo
+
+All endpoints are provided by [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
+
+---
+
 ## 🏗️ Future Improvements
 
 ✅ Add role-based authentication

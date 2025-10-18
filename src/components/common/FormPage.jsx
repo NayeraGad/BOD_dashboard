@@ -24,6 +24,7 @@ const FormPage = ({ id, thunk, slice, fields }) => {
       toast.success(`${slice.slice(0, -1)} updated successfully!`);
       navigate(`/${slice}`);
     } catch (err) {
+      console.log(err);
       toast.error("Update failed. Please try again.");
     }
   };

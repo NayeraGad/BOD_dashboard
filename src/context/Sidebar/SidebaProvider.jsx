@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SidebarContext } from "./sidebarContext";
+import { SidebarContext } from "./SidebarContext";
 import { useDebounce } from "../../hooks";
 
 const SidebarProvider = ({ children }) => {

@@ -28,6 +28,7 @@ export const DeleteButton = ({ thunk, id }) => {
       toast.success("Item deleted successfully!");
     } catch (err) {
       toast.error("Failed to delete item. Please try again.");
+      console.error(err);
     }
   };
 
